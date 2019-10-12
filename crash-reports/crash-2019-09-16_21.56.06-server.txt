@@ -1,0 +1,90 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 16/09/19 21:56
+Description: Exception ticking world
+
+java.lang.NoClassDefFoundError: net/shadowmage/ancientwarfare/structure/render/statue/StatueEntityRegistry
+	at net.shadowmage.ancientwarfare.structure.tile.EntityStatueInfo.<init>(EntityStatueInfo.java:34)
+	at net.shadowmage.ancientwarfare.structure.tile.TileStake.<init>(TileStake.java:13)
+	at net.shadowmage.ancientwarfare.structure.block.BlockStake.createTileEntity(BlockStake.java:193)
+	at net.minecraft.world.chunk.Chunk.func_177422_i(Chunk.java:782)
+	at net.minecraft.world.chunk.Chunk.func_177424_a(Chunk.java:800)
+	at net.minecraft.world.World.func_175625_s(World.java:2402)
+	at net.minecraft.server.management.PlayerChunkMapEntry.func_187280_d(PlayerChunkMapEntry.java:273)
+	at net.minecraft.server.management.PlayerChunkMap.func_72693_b(SourceFile:115)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:227)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:756)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.shadowmage.ancientwarfare.structure.tile.EntityStatueInfo.<init>(EntityStatueInfo.java:34)
+	at net.shadowmage.ancientwarfare.structure.tile.TileStake.<init>(TileStake.java:13)
+	at net.shadowmage.ancientwarfare.structure.block.BlockStake.createTileEntity(BlockStake.java:193)
+	at net.minecraft.world.chunk.Chunk.func_177422_i(Chunk.java:782)
+	at net.minecraft.world.chunk.Chunk.func_177424_a(Chunk.java:800)
+	at net.minecraft.world.World.func_175625_s(World.java:2402)
+	at net.minecraft.server.management.PlayerChunkMapEntry.func_187280_d(PlayerChunkMapEntry.java:273)
+	at net.minecraft.server.management.PlayerChunkMap.func_72693_b(SourceFile:115)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:227)
+
+-- Affected level --
+Details:
+	Level name: world
+	All players: 1 total; [EntityPlayerMP['Insidious_'/596, l='world', x=61.37, y=65.00, z=355.50]]
+	Chunk stats: ServerChunkCache: 625 Drop: 0
+	Level seed: 580451736399762768
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-132,64,256), Chunk: (at 12,4,0 in -9,16; contains blocks -144,0,256 to -129,255,271), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 35026 game time, 18300 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 37029 (now: false), thunder time: 68879 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:756)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_221, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 438522520 bytes (418 MB) / 1045430272 bytes (997 MB) up to 1045430272 bytes (997 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx1G
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 10 mods loaded, 10 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                       | Version          | Source                                        | Signature                                |
+	|:------ |:------------------------ |:---------------- |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft                | 1.12.2           | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp                      | 9.42             | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML                      | 8.0.99.99        | forge-1.12.2-14.23.5.2847-universal.jar       | None                                     |
+	| LCHIJA | forge                    | 14.23.5.2847     | forge-1.12.2-14.23.5.2847-universal.jar       | None                                     |
+	| LCHIJA | codechickenlib           | 3.2.3.358        | CodeChickenLib-1.12.2-3.2.3.358-universal.jar | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | ancientwarfare           | 1.12.2-2.7.0.772 | ancientwarfare-1.12.2-2.7.0.772.jar           | None                                     |
+	| LCHIJA | ancientwarfarestructure  | 1.12.2-2.7.0.772 | ancientwarfare-1.12.2-2.7.0.772.jar           | None                                     |
+	| LCHIJA | ancientwarfarevehicle    | 1.12.2-2.7.0.772 | ancientwarfare-1.12.2-2.7.0.772.jar           | None                                     |
+	| LCHIJA | ancientwarfarenpc        | 1.12.2-2.7.0.772 | ancientwarfare-1.12.2-2.7.0.772.jar           | None                                     |
+	| LCHIJA | ancientwarfareautomation | 1.12.2-2.7.0.772 | ancientwarfare-1.12.2-2.7.0.772.jar           | None                                     |
+
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 20; [EntityPlayerMP['Insidious_'/596, l='world', x=61.37, y=65.00, z=355.50]]
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
